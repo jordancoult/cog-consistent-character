@@ -81,7 +81,7 @@
   },
   "8": {
     "inputs": {
-      "ckpt_name": "dreamshaperXL_lightningDPMSDE.safetensors"
+      "ckpt_name": "RealVisXL_V4.0_Lightning.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
@@ -90,7 +90,7 @@
   },
   "9": {
     "inputs": {
-      "text": "girl, age 24, sitting in a cafe",
+      "text": "RAW photo, a casual photo of a girl, age 24, natural skin, 8k uhd, high quality, film grain, Fujifilm XT3, sitting in a cafe",
       "clip": [
         "8",
         1
@@ -116,7 +116,7 @@
   },
   "11": {
     "inputs": {
-      "seed": 167,
+      "seed": 199,
       "steps": 5,
       "cfg": 1.2,
       "sampler_name": "dpmpp_sde_gpu",
@@ -225,74 +225,12 @@
   },
   "94": {
     "inputs": {
-      "image": "pose_kps_00012_.png",
+      "image": "kate-headhshot.jpeg",
       "upload": "image"
     },
     "class_type": "LoadImage",
     "_meta": {
       "title": "Load Image"
-    }
-  },
-  "98": {
-    "inputs": {
-      "guide_size": 384,
-      "guide_size_for": true,
-      "max_size": 1024,
-      "seed": 1073953721129240,
-      "steps": 4,
-      "cfg": 1,
-      "sampler_name": "dpmpp_sde",
-      "scheduler": "karras",
-      "denoise": 0.35000000000000003,
-      "feather": 5,
-      "noise_mask": true,
-      "force_inpaint": true,
-      "bbox_threshold": 0.5,
-      "bbox_dilation": 10,
-      "bbox_crop_factor": 3,
-      "sam_detection_hint": "center-1",
-      "sam_dilation": 0,
-      "sam_threshold": 0.93,
-      "sam_bbox_expansion": 0,
-      "sam_mask_hint_threshold": 0.7,
-      "sam_mask_hint_use_negative": "False",
-      "drop_size": 10,
-      "wildcard": "",
-      "cycle": 1,
-      "inpaint_model": false,
-      "noise_mask_feather": 100,
-      "image": [
-        "13",
-        0
-      ],
-      "model": [
-        "2",
-        0
-      ],
-      "clip": [
-        "8",
-        1
-      ],
-      "vae": [
-        "8",
-        2
-      ],
-      "positive": [
-        "113",
-        0
-      ],
-      "negative": [
-        "114",
-        0
-      ],
-      "bbox_detector": [
-        "99",
-        0
-      ]
-    },
-    "class_type": "FaceDetailer",
-    "_meta": {
-      "title": "FaceDetailer"
     }
   },
   "99": {
@@ -305,12 +243,7 @@
     }
   },
   "100": {
-    "inputs": {
-      "images": [
-        "98",
-        0
-      ]
-    },
+    "inputs": {},
     "class_type": "PreviewImage",
     "_meta": {
       "title": "Preview Image"
@@ -319,11 +252,7 @@
   "103": {
     "inputs": {
       "upscale_method": "lanczos",
-      "scale_by": 1.5,
-      "image": [
-        "98",
-        0
-      ]
+      "scale_by": 1.5
     },
     "class_type": "ImageScaleBy",
     "_meta": {
@@ -569,14 +498,243 @@
       "title": "FaceDetailer"
     }
   },
+  "116": {
+    "inputs": {
+      "ckpt_name": "RealVisXL_V4.0_Lightning.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
   "117": {
     "inputs": {
-      "seed": 142112596164069,
+      "seed": [
+        "145",
+        3
+      ],
       "steps": 5,
       "cfg": 1.7,
-      "sampler_name": "dpmpp_sde",
-      "scheduler": "normal",
+      "sampler_name": "dpmpp_sde_gpu",
+      "scheduler": "karras",
       "denoise": 1,
+      "model": [
+        "125",
+        0
+      ],
+      "positive": [
+        "125",
+        1
+      ],
+      "negative": [
+        "125",
+        2
+      ],
+      "latent_image": [
+        "122",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "118": {
+    "inputs": {
+      "text": "nipple, nude, naked, lowres, getty, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name, trademark, watermark, title, multiple view, reference sheet, mutated hands and fingers, poorly drawn face, mutation, deformed, ugly, bad proportions, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, tatoo, amateur drawing, odd eyes, uneven eyes, unnatural face, uneven nostrils, crooked mouth, bad teeth, crooked teeth, photoshop, video game, censor, censored, ghost, b&w, weird colors, gradient background, spotty background, blurry background, ugly background, simple background, realistic, out of frame, extra objects, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of focus, blurry, very long body, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn eyes, cloned face, disfigured, deformed, cross-eye, extra limbs, missing limb, malformed hands, mutated, morbid, mutilated, disfigured, extra arms, extra hands, mangled fingers, contorted, conjoined, mismatched limbs, mismatched parts, bad perspective, black and white, oversaturated, undersaturated, bad shadow, cropped image, draft, grainy, pixelated",
+      "clip": [
+        "116",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "119": {
+    "inputs": {
+      "text": "RAW photo, a casual photo of a girl, age 24, natural skin, 8k uhd, high quality, film grain, Fujifilm XT3, crying in ",
+      "clip": [
+        "116",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "120": {
+    "inputs": {
+      "images": [
+        "121",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "InstantID Only"
+    }
+  },
+  "121": {
+    "inputs": {
+      "samples": [
+        "117",
+        0
+      ],
+      "vae": [
+        "116",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "122": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "124": {
+    "inputs": {
+      "instantid_file": "instantid-ip-adapter.bin"
+    },
+    "class_type": "InstantIDModelLoader",
+    "_meta": {
+      "title": "Load InstantID Model"
+    }
+  },
+  "125": {
+    "inputs": {
+      "weight": 0.8,
+      "start_at": 0,
+      "end_at": 1,
+      "instantid": [
+        "124",
+        0
+      ],
+      "insightface": [
+        "130",
+        0
+      ],
+      "control_net": [
+        "131",
+        0
+      ],
+      "image": [
+        "127",
+        0
+      ],
+      "model": [
+        "116",
+        0
+      ],
+      "positive": [
+        "119",
+        0
+      ],
+      "negative": [
+        "118",
+        0
+      ]
+    },
+    "class_type": "ApplyInstantID",
+    "_meta": {
+      "title": "Apply InstantID"
+    }
+  },
+  "127": {
+    "inputs": {
+      "image": "kate-headhshot.jpeg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "130": {
+    "inputs": {
+      "provider": "CPU"
+    },
+    "class_type": "InstantIDFaceAnalysis",
+    "_meta": {
+      "title": "InstantID Face Analysis"
+    }
+  },
+  "131": {
+    "inputs": {
+      "control_net_name": "instantid-controlnet.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "132": {
+    "inputs": {
+      "preset": "PLUS FACE (portraits)",
+      "model": [
+        "116",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoader",
+    "_meta": {
+      "title": "IPAdapter Unified Loader"
+    }
+  },
+  "133": {
+    "inputs": {
+      "weight": 1,
+      "weight_type": "style transfer",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "132",
+        0
+      ],
+      "ipadapter": [
+        "132",
+        1
+      ],
+      "image": [
+        "127",
+        0
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
+    }
+  },
+  "137": {
+    "inputs": {
+      "seed": [
+        "145",
+        3
+      ],
+      "steps": 5,
+      "cfg": 1.7,
+      "sampler_name": "dpmpp_sde_gpu",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "133",
+        0
+      ],
       "positive": [
         "119",
         0
@@ -595,41 +753,15 @@
       "title": "KSampler"
     }
   },
-  "118": {
-    "inputs": {
-      "text": "nipple, nude, naked, lowres, getty, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name, trademark, watermark, title, multiple view, reference sheet, mutated hands and fingers, poorly drawn face, mutation, deformed, ugly, bad proportions, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, tatoo, amateur drawing, odd eyes, uneven eyes, unnatural face, uneven nostrils, crooked mouth, bad teeth, crooked teeth, photoshop, video game, censor, censored, ghost, b&w, weird colors, gradient background, spotty background, blurry background, ugly background, simple background, realistic, out of frame, extra objects, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of focus, blurry, very long body, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn eyes, cloned face, disfigured, deformed, cross-eye, extra limbs, missing limb, malformed hands, mutated, morbid, mutilated, disfigured, extra arms, extra hands, mangled fingers, contorted, conjoined, mismatched limbs, mismatched parts, bad perspective, black and white, oversaturated, undersaturated, bad shadow, cropped image, draft, grainy, pixelated"
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "119": {
-    "inputs": {
-      "text": "girl, age 24, sitting in cafe"
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "120": {
-    "inputs": {
-      "images": [
-        "121",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
-  "121": {
+  "141": {
     "inputs": {
       "samples": [
-        "117",
+        "137",
         0
+      ],
+      "vae": [
+        "116",
+        2
       ]
     },
     "class_type": "VAEDecode",
@@ -637,15 +769,25 @@
       "title": "VAE Decode"
     }
   },
-  "122": {
+  "142": {
     "inputs": {
-      "width": 1024,
-      "height": 1024,
-      "batch_size": 1
+      "images": [
+        "141",
+        0
+      ]
     },
-    "class_type": "EmptyLatentImage",
+    "class_type": "PreviewImage",
     "_meta": {
-      "title": "Empty Latent Image"
+      "title": "IPAdapter Only"
+    }
+  },
+  "145": {
+    "inputs": {
+      "seed": 4
+    },
+    "class_type": "Seed",
+    "_meta": {
+      "title": "Seed"
     }
   }
 }
