@@ -116,7 +116,7 @@
   },
   "11": {
     "inputs": {
-      "seed": 296,
+      "seed": 401,
       "steps": 5,
       "cfg": 1.2,
       "sampler_name": "dpmpp_sde_gpu",
@@ -576,10 +576,10 @@
         3
       ],
       "steps": 5,
-      "cfg": 1.1,
-      "sampler_name": "dpmpp_sde_gpu",
+      "cfg": 1.7,
+      "sampler_name": "dpmpp_sde",
       "scheduler": "karras",
-      "denoise": 1,
+      "denoise": 0.85,
       "model": [
         "125",
         0
@@ -641,7 +641,7 @@
   },
   "125": {
     "inputs": {
-      "weight": 0.8,
+      "weight": 1,
       "start_at": 0,
       "end_at": 1,
       "instantid": [
@@ -747,7 +747,7 @@
   },
   "145": {
     "inputs": {
-      "seed": 79
+      "seed": 779750749619861
     },
     "class_type": "Seed",
     "_meta": {
@@ -962,7 +962,7 @@
     },
     "class_type": "PreviewImage",
     "_meta": {
-      "title": "Preview Image"
+      "title": "IP Adapter Only"
     }
   },
   "195": {
@@ -973,6 +973,261 @@
     "class_type": "LoadImage",
     "_meta": {
       "title": "Load Image"
+    }
+  },
+  "197": {
+    "inputs": {
+      "seed": [
+        "145",
+        3
+      ],
+      "steps": 5,
+      "cfg": 1.1,
+      "sampler_name": "dpmpp_sde_gpu",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "200",
+        0
+      ],
+      "positive": [
+        "167:1",
+        0
+      ],
+      "negative": [
+        "167:0",
+        0
+      ],
+      "latent_image": [
+        "163",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "198": {
+    "inputs": {
+      "samples": [
+        "197",
+        0
+      ],
+      "vae": [
+        "162",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "199": {
+    "inputs": {
+      "preset": "FACEID PLUS V2",
+      "lora_strength": 0.6,
+      "provider": "CUDA",
+      "model": [
+        "125",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoaderFaceID",
+    "_meta": {
+      "title": "IPAdapter Unified Loader FaceID"
+    }
+  },
+  "200": {
+    "inputs": {
+      "weight": 1,
+      "weight_faceidv2": 2,
+      "weight_type": "linear",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "199",
+        0
+      ],
+      "ipadapter": [
+        "199",
+        1
+      ],
+      "image": [
+        "164",
+        0
+      ]
+    },
+    "class_type": "IPAdapterFaceID",
+    "_meta": {
+      "title": "IPAdapter FaceID"
+    }
+  },
+  "201": {
+    "inputs": {
+      "images": [
+        "198",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "InstantID -> IPAdapter"
+    }
+  },
+  "207": {
+    "inputs": {
+      "seed": 158,
+      "steps": 5,
+      "cfg": 1.1,
+      "sampler_name": "dpmpp_sde_gpu",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "218",
+        0
+      ],
+      "positive": [
+        "167:1",
+        0
+      ],
+      "negative": [
+        "167:0",
+        0
+      ],
+      "latent_image": [
+        "163",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "210": {
+    "inputs": {
+      "samples": [
+        "207",
+        0
+      ],
+      "vae": [
+        "162",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "211": {
+    "inputs": {
+      "images": [
+        "210",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "PuLId Only"
+    }
+  },
+  "213": {
+    "inputs": {
+      "pulid_file": "ip-adapter_pulid_sdxl_fp16.safetensors"
+    },
+    "class_type": "PulidModelLoader",
+    "_meta": {
+      "title": "Load PuLID Model"
+    }
+  },
+  "214": {
+    "inputs": {
+      "provider": "CPU"
+    },
+    "class_type": "PulidInsightFaceLoader",
+    "_meta": {
+      "title": "Load InsightFace (PuLID)"
+    }
+  },
+  "215": {
+    "inputs": {},
+    "class_type": "PulidEvaClipLoader",
+    "_meta": {
+      "title": "Load Eva Clip (PuLID)"
+    }
+  },
+  "218": {
+    "inputs": {
+      "method": "fidelity",
+      "weight": 0.8,
+      "start_at": 0,
+      "end_at": 1,
+      "model": [
+        "162",
+        0
+      ],
+      "pulid": [
+        "213",
+        0
+      ],
+      "eva_clip": [
+        "215",
+        0
+      ],
+      "face_analysis": [
+        "214",
+        0
+      ],
+      "image": [
+        "164",
+        0
+      ]
+    },
+    "class_type": "ApplyPulid",
+    "_meta": {
+      "title": "Apply PuLID"
+    }
+  },
+  "232": {
+    "inputs": {
+      "faceanalysis": [
+        "233",
+        0
+      ],
+      "image": [
+        "164",
+        0
+      ]
+    },
+    "class_type": "FaceKeypointsPreprocessor",
+    "_meta": {
+      "title": "Face Keypoints Preprocessor"
+    }
+  },
+  "233": {
+    "inputs": {
+      "provider": "CUDA"
+    },
+    "class_type": "InstantIDFaceAnalysis",
+    "_meta": {
+      "title": "InstantID Face Analysis"
+    }
+  },
+  "235": {
+    "inputs": {
+      "images": [
+        "232",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
     }
   },
   "167:0": {
@@ -990,7 +1245,7 @@
   },
   "167:1": {
     "inputs": {
-      "text": "RAW photo, a girl, age 24, standing in the street, full body, casual clothes",
+      "text": "RAW photo, a girl, age 24, walking down street in medellin, casual clothes",
       "clip": [
         "162",
         1
