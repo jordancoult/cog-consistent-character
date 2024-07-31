@@ -79,22 +79,9 @@
       "title": "Load Image"
     }
   },
-  "8": {
-    "inputs": {
-      "ckpt_name": "RealVisXL_V4.0_Lightning.safetensors"
-    },
-    "class_type": "CheckpointLoaderSimple",
-    "_meta": {
-      "title": "Load Checkpoint"
-    }
-  },
   "9": {
     "inputs": {
-      "text": "RAW photo, a casual photo of a girl, age 24, natural skin, 8k uhd, high quality, film grain, Fujifilm XT3, sitting in a cafe",
-      "clip": [
-        "8",
-        1
-      ]
+      "text": "RAW photo, a casual photo of a girl, age 24, natural skin, 8k uhd, high quality, film grain, Fujifilm XT3, sitting in a cafe"
     },
     "class_type": "CLIPTextEncode",
     "_meta": {
@@ -103,11 +90,7 @@
   },
   "10": {
     "inputs": {
-      "text": "nipple, nude, naked, lowres, getty, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name, trademark, watermark, title, multiple view, reference sheet, mutated hands and fingers, poorly drawn face, mutation, deformed, ugly, bad proportions, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, tatoo, amateur drawing, odd eyes, uneven eyes, unnatural face, uneven nostrils, crooked mouth, bad teeth, crooked teeth, photoshop, video game, censor, censored, ghost, b&w, weird colors, gradient background, spotty background, blurry background, ugly background, simple background, realistic, out of frame, extra objects, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of focus, blurry, very long body, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn eyes, cloned face, disfigured, deformed, cross-eye, extra limbs, missing limb, malformed hands, mutated, morbid, mutilated, disfigured, extra arms, extra hands, mangled fingers, contorted, conjoined, mismatched limbs, mismatched parts, bad perspective, black and white, oversaturated, undersaturated, bad shadow, cropped image, draft, grainy, pixelated",
-      "clip": [
-        "8",
-        1
-      ]
+      "text": "nipple, nude, naked, lowres, getty, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name, trademark, watermark, title, multiple view, reference sheet, mutated hands and fingers, poorly drawn face, mutation, deformed, ugly, bad proportions, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, tatoo, amateur drawing, odd eyes, uneven eyes, unnatural face, uneven nostrils, crooked mouth, bad teeth, crooked teeth, photoshop, video game, censor, censored, ghost, b&w, weird colors, gradient background, spotty background, blurry background, ugly background, simple background, realistic, out of frame, extra objects, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of focus, blurry, very long body, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn eyes, cloned face, disfigured, deformed, cross-eye, extra limbs, missing limb, malformed hands, mutated, morbid, mutilated, disfigured, extra arms, extra hands, mangled fingers, contorted, conjoined, mismatched limbs, mismatched parts, bad perspective, black and white, oversaturated, undersaturated, bad shadow, cropped image, draft, grainy, pixelated"
     },
     "class_type": "CLIPTextEncode",
     "_meta": {
@@ -116,7 +99,7 @@
   },
   "11": {
     "inputs": {
-      "seed": 401,
+      "seed": 498,
       "steps": 5,
       "cfg": 1.2,
       "sampler_name": "dpmpp_sde_gpu",
@@ -162,10 +145,6 @@
       "samples": [
         "11",
         0
-      ],
-      "vae": [
-        "8",
-        2
       ]
     },
     "class_type": "VAEDecode",
@@ -186,11 +165,7 @@
   },
   "39": {
     "inputs": {
-      "preset": "PLUS FACE (portraits)",
-      "model": [
-        "8",
-        0
-      ]
+      "preset": "PLUS FACE (portraits)"
     },
     "class_type": "IPAdapterUnifiedLoader",
     "_meta": {
@@ -268,14 +243,6 @@
       "model": [
         "2",
         0
-      ],
-      "clip": [
-        "8",
-        1
-      ],
-      "vae": [
-        "8",
-        2
       ],
       "positive": [
         "113",
@@ -377,10 +344,6 @@
       "pixels": [
         "109",
         0
-      ],
-      "vae": [
-        "8",
-        2
       ]
     },
     "class_type": "VAEEncode",
@@ -393,10 +356,6 @@
       "samples": [
         "105",
         0
-      ],
-      "vae": [
-        "8",
-        2
       ]
     },
     "class_type": "VAEDecode",
@@ -483,11 +442,7 @@
   },
   "113": {
     "inputs": {
-      "text": "perfect eyes",
-      "clip": [
-        "8",
-        1
-      ]
+      "text": "perfect eyes"
     },
     "class_type": "CLIPTextEncode",
     "_meta": {
@@ -496,11 +451,7 @@
   },
   "114": {
     "inputs": {
-      "text": "deformed pupils, deformed eyes, ugly eyes",
-      "clip": [
-        "8",
-        1
-      ]
+      "text": "deformed pupils, deformed eyes, ugly eyes"
     },
     "class_type": "CLIPTextEncode",
     "_meta": {
@@ -539,18 +490,6 @@
         "107",
         0
       ],
-      "model": [
-        "8",
-        0
-      ],
-      "clip": [
-        "8",
-        1
-      ],
-      "vae": [
-        "8",
-        2
-      ],
       "positive": [
         "114",
         0
@@ -569,39 +508,6 @@
       "title": "FaceDetailer"
     }
   },
-  "117": {
-    "inputs": {
-      "seed": [
-        "145",
-        3
-      ],
-      "steps": 5,
-      "cfg": 1.7,
-      "sampler_name": "dpmpp_sde",
-      "scheduler": "karras",
-      "denoise": 0.85,
-      "model": [
-        "125",
-        0
-      ],
-      "positive": [
-        "125",
-        1
-      ],
-      "negative": [
-        "125",
-        2
-      ],
-      "latent_image": [
-        "163",
-        0
-      ]
-    },
-    "class_type": "KSampler",
-    "_meta": {
-      "title": "KSampler"
-    }
-  },
   "120": {
     "inputs": {
       "images": [
@@ -616,10 +522,6 @@
   },
   "121": {
     "inputs": {
-      "samples": [
-        "117",
-        0
-      ],
       "vae": [
         "162",
         2
@@ -628,72 +530,6 @@
     "class_type": "VAEDecode",
     "_meta": {
       "title": "VAE Decode"
-    }
-  },
-  "124": {
-    "inputs": {
-      "instantid_file": "instantid-ip-adapter.bin"
-    },
-    "class_type": "InstantIDModelLoader",
-    "_meta": {
-      "title": "Load InstantID Model"
-    }
-  },
-  "125": {
-    "inputs": {
-      "weight": 1,
-      "start_at": 0,
-      "end_at": 1,
-      "instantid": [
-        "124",
-        0
-      ],
-      "insightface": [
-        "130",
-        0
-      ],
-      "control_net": [
-        "131",
-        0
-      ],
-      "image": [
-        "164",
-        0
-      ],
-      "model": [
-        "162",
-        0
-      ],
-      "positive": [
-        "167:1",
-        0
-      ],
-      "negative": [
-        "167:0",
-        0
-      ]
-    },
-    "class_type": "ApplyInstantID",
-    "_meta": {
-      "title": "Apply InstantID"
-    }
-  },
-  "130": {
-    "inputs": {
-      "provider": "CPU"
-    },
-    "class_type": "InstantIDFaceAnalysis",
-    "_meta": {
-      "title": "InstantID Face Analysis"
-    }
-  },
-  "131": {
-    "inputs": {
-      "control_net_name": "instantid-controlnet.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "Load ControlNet Model"
     }
   },
   "137": {
@@ -747,7 +583,7 @@
   },
   "145": {
     "inputs": {
-      "seed": 779750749619861
+      "seed": 539550921303673
     },
     "class_type": "Seed",
     "_meta": {
@@ -782,133 +618,6 @@
     "class_type": "LoadImage",
     "_meta": {
       "title": "Load Image"
-    }
-  },
-  "173": {
-    "inputs": {
-      "seed": [
-        "145",
-        3
-      ],
-      "steps": 5,
-      "cfg": 1.1,
-      "sampler_name": "dpmpp_sde_gpu",
-      "scheduler": "karras",
-      "denoise": 1,
-      "model": [
-        "177",
-        0
-      ],
-      "positive": [
-        "177",
-        1
-      ],
-      "negative": [
-        "177",
-        2
-      ],
-      "latent_image": [
-        "163",
-        0
-      ]
-    },
-    "class_type": "KSampler",
-    "_meta": {
-      "title": "KSampler"
-    }
-  },
-  "174": {
-    "inputs": {
-      "images": [
-        "175",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "IPAdapter -> InstantID"
-    }
-  },
-  "175": {
-    "inputs": {
-      "samples": [
-        "173",
-        0
-      ],
-      "vae": [
-        "162",
-        2
-      ]
-    },
-    "class_type": "VAEDecode",
-    "_meta": {
-      "title": "VAE Decode"
-    }
-  },
-  "176": {
-    "inputs": {
-      "instantid_file": "instantid-ip-adapter.bin"
-    },
-    "class_type": "InstantIDModelLoader",
-    "_meta": {
-      "title": "Load InstantID Model"
-    }
-  },
-  "177": {
-    "inputs": {
-      "weight": 0.8,
-      "start_at": 0,
-      "end_at": 1,
-      "instantid": [
-        "176",
-        0
-      ],
-      "insightface": [
-        "178",
-        0
-      ],
-      "control_net": [
-        "179",
-        0
-      ],
-      "image": [
-        "164",
-        0
-      ],
-      "model": [
-        "191",
-        0
-      ],
-      "positive": [
-        "167:1",
-        0
-      ],
-      "negative": [
-        "167:0",
-        0
-      ]
-    },
-    "class_type": "ApplyInstantID",
-    "_meta": {
-      "title": "Apply InstantID"
-    }
-  },
-  "178": {
-    "inputs": {
-      "provider": "CPU"
-    },
-    "class_type": "InstantIDFaceAnalysis",
-    "_meta": {
-      "title": "InstantID Face Analysis"
-    }
-  },
-  "179": {
-    "inputs": {
-      "control_net_name": "instantid-controlnet.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "Load ControlNet Model"
     }
   },
   "190": {
@@ -965,141 +674,69 @@
       "title": "IP Adapter Only"
     }
   },
-  "195": {
+  "238": {
     "inputs": {
-      "image": "pose_kps_00019_.png",
-      "upload": "image"
+      "ckpt_name": "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae.safetensors"
     },
-    "class_type": "LoadImage",
+    "class_type": "CheckpointLoaderSimple",
     "_meta": {
-      "title": "Load Image"
+      "title": "Load Checkpoint"
     }
   },
-  "197": {
+  "239": {
     "inputs": {
-      "seed": [
-        "145",
-        3
-      ],
-      "steps": 5,
-      "cfg": 1.1,
-      "sampler_name": "dpmpp_sde_gpu",
-      "scheduler": "karras",
-      "denoise": 1,
-      "model": [
-        "200",
+      "text": [
+        "287",
         0
       ],
-      "positive": [
-        "167:1",
-        0
-      ],
-      "negative": [
-        "167:0",
-        0
-      ],
-      "latent_image": [
-        "163",
-        0
-      ]
-    },
-    "class_type": "KSampler",
-    "_meta": {
-      "title": "KSampler"
-    }
-  },
-  "198": {
-    "inputs": {
-      "samples": [
-        "197",
-        0
-      ],
-      "vae": [
-        "162",
-        2
-      ]
-    },
-    "class_type": "VAEDecode",
-    "_meta": {
-      "title": "VAE Decode"
-    }
-  },
-  "199": {
-    "inputs": {
-      "preset": "FACEID PLUS V2",
-      "lora_strength": 0.6,
-      "provider": "CUDA",
-      "model": [
-        "125",
-        0
-      ]
-    },
-    "class_type": "IPAdapterUnifiedLoaderFaceID",
-    "_meta": {
-      "title": "IPAdapter Unified Loader FaceID"
-    }
-  },
-  "200": {
-    "inputs": {
-      "weight": 1,
-      "weight_faceidv2": 2,
-      "weight_type": "linear",
-      "combine_embeds": "concat",
-      "start_at": 0,
-      "end_at": 1,
-      "embeds_scaling": "V only",
-      "model": [
-        "199",
-        0
-      ],
-      "ipadapter": [
-        "199",
+      "clip": [
+        "238",
         1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "240": {
+    "inputs": {
+      "text": [
+        "288",
+        0
       ],
-      "image": [
-        "164",
-        0
+      "clip": [
+        "238",
+        1
       ]
     },
-    "class_type": "IPAdapterFaceID",
+    "class_type": "CLIPTextEncode",
     "_meta": {
-      "title": "IPAdapter FaceID"
+      "title": "CLIP Text Encode (Prompt)"
     }
   },
-  "201": {
+  "242": {
     "inputs": {
-      "images": [
-        "198",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "InstantID -> IPAdapter"
-    }
-  },
-  "207": {
-    "inputs": {
-      "seed": 158,
-      "steps": 5,
-      "cfg": 1.1,
-      "sampler_name": "dpmpp_sde_gpu",
+      "seed": 968043376459074,
+      "steps": 3,
+      "cfg": 2,
+      "sampler_name": "dpmpp_sde",
       "scheduler": "karras",
       "denoise": 1,
       "model": [
-        "218",
+        "238",
         0
       ],
       "positive": [
-        "167:1",
+        "239",
         0
       ],
       "negative": [
-        "167:0",
+        "240",
         0
       ],
       "latent_image": [
-        "163",
+        "285",
         0
       ]
     },
@@ -1108,14 +745,14 @@
       "title": "KSampler"
     }
   },
-  "210": {
+  "243": {
     "inputs": {
       "samples": [
-        "207",
+        "242",
         0
       ],
       "vae": [
-        "162",
+        "238",
         2
       ]
     },
@@ -1124,83 +761,26 @@
       "title": "VAE Decode"
     }
   },
-  "211": {
+  "244": {
     "inputs": {
       "images": [
-        "210",
+        "243",
         0
       ]
     },
     "class_type": "PreviewImage",
     "_meta": {
-      "title": "PuLId Only"
+      "title": "Preview Image"
     }
   },
-  "213": {
-    "inputs": {
-      "pulid_file": "ip-adapter_pulid_sdxl_fp16.safetensors"
-    },
-    "class_type": "PulidModelLoader",
-    "_meta": {
-      "title": "Load PuLID Model"
-    }
-  },
-  "214": {
-    "inputs": {
-      "provider": "CPU"
-    },
-    "class_type": "PulidInsightFaceLoader",
-    "_meta": {
-      "title": "Load InsightFace (PuLID)"
-    }
-  },
-  "215": {
-    "inputs": {},
-    "class_type": "PulidEvaClipLoader",
-    "_meta": {
-      "title": "Load Eva Clip (PuLID)"
-    }
-  },
-  "218": {
-    "inputs": {
-      "method": "fidelity",
-      "weight": 0.8,
-      "start_at": 0,
-      "end_at": 1,
-      "model": [
-        "162",
-        0
-      ],
-      "pulid": [
-        "213",
-        0
-      ],
-      "eva_clip": [
-        "215",
-        0
-      ],
-      "face_analysis": [
-        "214",
-        0
-      ],
-      "image": [
-        "164",
-        0
-      ]
-    },
-    "class_type": "ApplyPulid",
-    "_meta": {
-      "title": "Apply PuLID"
-    }
-  },
-  "232": {
+  "253": {
     "inputs": {
       "faceanalysis": [
-        "233",
+        "254",
         0
       ],
       "image": [
-        "164",
+        "243",
         0
       ]
     },
@@ -1209,7 +789,7 @@
       "title": "Face Keypoints Preprocessor"
     }
   },
-  "233": {
+  "254": {
     "inputs": {
       "provider": "CUDA"
     },
@@ -1218,16 +798,296 @@
       "title": "InstantID Face Analysis"
     }
   },
-  "235": {
+  "255": {
     "inputs": {
       "images": [
-        "232",
+        "253",
         0
       ]
     },
     "class_type": "PreviewImage",
     "_meta": {
       "title": "Preview Image"
+    }
+  },
+  "258": {
+    "inputs": {
+      "detect_hand": "enable",
+      "detect_body": "enable",
+      "detect_face": "enable",
+      "resolution": 512,
+      "bbox_detector": "yolox_l.onnx",
+      "pose_estimator": "dw-ll_ucoco_384_bs5.torchscript.pt",
+      "image": [
+        "243",
+        0
+      ]
+    },
+    "class_type": "DWPreprocessor",
+    "_meta": {
+      "title": "DWPose Estimator"
+    }
+  },
+  "259": {
+    "inputs": {
+      "images": [
+        "258",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "269": {
+    "inputs": {
+      "control_net_name": "thibaud_xl_openpose.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "270": {
+    "inputs": {
+      "strength": 0.9,
+      "conditioning": [
+        "276",
+        1
+      ],
+      "control_net": [
+        "269",
+        0
+      ],
+      "image": [
+        "258",
+        0
+      ]
+    },
+    "class_type": "ControlNetApply",
+    "_meta": {
+      "title": "Apply ControlNet"
+    }
+  },
+  "272": {
+    "inputs": {
+      "seed": 29185869307187,
+      "steps": 5,
+      "cfg": 1.7,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "denoise": 0.85,
+      "model": [
+        "276",
+        0
+      ],
+      "positive": [
+        "270",
+        0
+      ],
+      "negative": [
+        "276",
+        2
+      ],
+      "latent_image": [
+        "291",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "274": {
+    "inputs": {
+      "samples": [
+        "272",
+        0
+      ],
+      "vae": [
+        "290",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "275": {
+    "inputs": {
+      "instantid_file": "instantid-ip-adapter.bin"
+    },
+    "class_type": "InstantIDModelLoader",
+    "_meta": {
+      "title": "Load InstantID Model"
+    }
+  },
+  "276": {
+    "inputs": {
+      "weight": 1,
+      "start_at": 0,
+      "end_at": 1,
+      "instantid": [
+        "275",
+        0
+      ],
+      "insightface": [
+        "277",
+        0
+      ],
+      "control_net": [
+        "278",
+        0
+      ],
+      "image": [
+        "289",
+        0
+      ],
+      "model": [
+        "290",
+        0
+      ],
+      "positive": [
+        "292",
+        0
+      ],
+      "negative": [
+        "293",
+        0
+      ],
+      "image_kps": [
+        "253",
+        0
+      ]
+    },
+    "class_type": "ApplyInstantID",
+    "_meta": {
+      "title": "Apply InstantID"
+    }
+  },
+  "277": {
+    "inputs": {
+      "provider": "CPU"
+    },
+    "class_type": "InstantIDFaceAnalysis",
+    "_meta": {
+      "title": "InstantID Face Analysis"
+    }
+  },
+  "278": {
+    "inputs": {
+      "control_net_name": "instantid-controlnet.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "285": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "286": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "274",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "287": {
+    "inputs": {
+      "prompt": "RAW photo, a girl, age 24, walking down street in medellin, casual clothes"
+    },
+    "class_type": "CR Prompt Text",
+    "_meta": {
+      "title": "⚙️ CR Prompt Text - Positive"
+    }
+  },
+  "288": {
+    "inputs": {
+      "prompt": "nipple, nude, naked, lowres, getty, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name, trademark, watermark, title, multiple view, reference sheet, mutated hands and fingers, poorly drawn face, mutation, deformed, ugly, bad proportions, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, tatoo, amateur drawing, odd eyes, uneven eyes, unnatural face, uneven nostrils, crooked mouth, bad teeth, crooked teeth, photoshop, video game, censor, censored, ghost, b&w, weird colors, gradient background, spotty background, blurry background, ugly background, simple background, realistic, out of frame, extra objects, tiling, poorly drawn hands, poorly drawn feet, poorly drawn face, out of focus, blurry, very long body, duplicate, morbid, mutilated, extra fingers, mutated hands, poorly drawn eyes, cloned face, disfigured, deformed, cross-eye, extra limbs, missing limb, malformed hands, mutated, morbid, mutilated, disfigured, extra arms, extra hands, mangled fingers, contorted, conjoined, mismatched limbs, mismatched parts, bad perspective, black and white, oversaturated, undersaturated, bad shadow, cropped image, draft, grainy, pixelated"
+    },
+    "class_type": "CR Prompt Text",
+    "_meta": {
+      "title": "⚙️ CR Prompt Text - Negative"
+    }
+  },
+  "289": {
+    "inputs": {
+      "image": "kate-headhshot (2).jpeg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "290": {
+    "inputs": {
+      "ckpt_name": "RealVisXL_V4.0_Lightning.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "291": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "292": {
+    "inputs": {
+      "text": [
+        "287",
+        0
+      ],
+      "clip": [
+        "290",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "293": {
+    "inputs": {
+      "text": [
+        "288",
+        0
+      ],
+      "clip": [
+        "290",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
     }
   },
   "167:0": {
