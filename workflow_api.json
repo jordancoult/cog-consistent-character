@@ -26,11 +26,11 @@
         0
       ],
       "image": [
-        "7",
+        "154",
         0
       ],
       "model": [
-        "52",
+        "222",
         0
       ],
       "positive": [
@@ -71,7 +71,7 @@
   },
   "7": {
     "inputs": {
-      "image": "koreanheadshot4.png",
+      "image": "obese-headshot.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -132,7 +132,7 @@
       "scheduler": "karras",
       "denoise": 0.9500000000000001,
       "model": [
-        "2",
+        "218",
         0
       ],
       "positive": [
@@ -182,56 +182,6 @@
       "title": "VAE Decode"
     }
   },
-  "29": {
-    "inputs": {
-      "width": 1024,
-      "height": 1024,
-      "batch_size": 1
-    },
-    "class_type": "EmptyLatentImage",
-    "_meta": {
-      "title": "Empty Latent Image"
-    }
-  },
-  "39": {
-    "inputs": {
-      "preset": "PLUS FACE (portraits)",
-      "model": [
-        "8",
-        0
-      ]
-    },
-    "class_type": "IPAdapterUnifiedLoader",
-    "_meta": {
-      "title": "IPAdapter Unified Loader"
-    }
-  },
-  "52": {
-    "inputs": {
-      "weight": 1,
-      "weight_type": "style transfer",
-      "combine_embeds": "concat",
-      "start_at": 0,
-      "end_at": 1,
-      "embeds_scaling": "V only",
-      "model": [
-        "39",
-        0
-      ],
-      "ipadapter": [
-        "39",
-        1
-      ],
-      "image": [
-        "7",
-        0
-      ]
-    },
-    "class_type": "IPAdapterAdvanced",
-    "_meta": {
-      "title": "IPAdapter Advanced"
-    }
-  },
   "73": {
     "inputs": {
       "control_net_name": "thibaud_xl_openpose.safetensors"
@@ -271,8 +221,8 @@
         "140",
         3
       ],
-      "steps": 4,
-      "cfg": 1,
+      "steps": 5,
+      "cfg": 1.5,
       "sampler_name": "dpmpp_sde",
       "scheduler": "karras",
       "denoise": 0.35000000000000003,
@@ -281,9 +231,9 @@
       "force_inpaint": true,
       "bbox_threshold": 0.5,
       "bbox_dilation": 10,
-      "bbox_crop_factor": 3,
+      "bbox_crop_factor": 2.5,
       "sam_detection_hint": "center-1",
-      "sam_dilation": 0,
+      "sam_dilation": -27,
       "sam_threshold": 0.93,
       "sam_bbox_expansion": 0,
       "sam_mask_hint_threshold": 0.7,
@@ -301,7 +251,7 @@
         0
       ],
       "model": [
-        "2",
+        "218",
         0
       ],
       "clip": [
@@ -323,6 +273,14 @@
       "bbox_detector": [
         "99",
         0
+      ],
+      "sam_model_opt": [
+        "215",
+        0
+      ],
+      "segm_detector_opt": [
+        "99",
+        1
       ]
     },
     "class_type": "FaceDetailer",
@@ -339,18 +297,6 @@
       "title": "UltralyticsDetectorProvider"
     }
   },
-  "100": {
-    "inputs": {
-      "images": [
-        "98",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
   "103": {
     "inputs": {
       "upscale_method": "lanczos",
@@ -363,96 +309,6 @@
     "class_type": "ImageScaleBy",
     "_meta": {
       "title": "Upscale Image By"
-    }
-  },
-  "104": {
-    "inputs": {
-      "images": [
-        "103",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
-  "105": {
-    "inputs": {
-      "seed": [
-        "140",
-        3
-      ],
-      "steps": 4,
-      "cfg": 1,
-      "sampler_name": "dpmpp_sde_gpu",
-      "scheduler": "karras",
-      "denoise": 0.2,
-      "model": [
-        "2",
-        0
-      ],
-      "positive": [
-        "2",
-        1
-      ],
-      "negative": [
-        "2",
-        2
-      ],
-      "latent_image": [
-        "106",
-        0
-      ]
-    },
-    "class_type": "KSampler",
-    "_meta": {
-      "title": "KSampler"
-    }
-  },
-  "106": {
-    "inputs": {
-      "pixels": [
-        "109",
-        0
-      ],
-      "vae": [
-        "8",
-        2
-      ]
-    },
-    "class_type": "VAEEncode",
-    "_meta": {
-      "title": "VAE Encode"
-    }
-  },
-  "107": {
-    "inputs": {
-      "samples": [
-        "105",
-        0
-      ],
-      "vae": [
-        "8",
-        2
-      ]
-    },
-    "class_type": "VAEDecode",
-    "_meta": {
-      "title": "VAE Decode"
-    }
-  },
-  "108": {
-    "inputs": {
-      "filename_prefix": "ComfyUI",
-      "images": [
-        "107",
-        0
-      ]
-    },
-    "class_type": "SaveImage",
-    "_meta": {
-      "title": "Save Image"
     }
   },
   "109": {
@@ -487,41 +343,9 @@
       "title": "Preview Image"
     }
   },
-  "111": {
-    "inputs": {
-      "brightness": 0,
-      "contrast": 1,
-      "saturation": 1,
-      "sharpness": 1.1,
-      "blur": 0,
-      "gaussian_blur": 0,
-      "edge_enhance": 0.1,
-      "detail_enhance": "true",
-      "image": [
-        "115",
-        0
-      ]
-    },
-    "class_type": "Image Filter Adjustments",
-    "_meta": {
-      "title": "Image Filter Adjustments"
-    }
-  },
-  "112": {
-    "inputs": {
-      "images": [
-        "111",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
   "113": {
     "inputs": {
-      "text": "perfect eyes",
+      "text": "striking eyes",
       "clip": [
         "8",
         1
@@ -545,176 +369,6 @@
       "title": "CLIP Text Encode (Prompt)"
     }
   },
-  "115": {
-    "inputs": {
-      "guide_size": 384,
-      "guide_size_for": true,
-      "max_size": 1024,
-      "seed": [
-        "140",
-        3
-      ],
-      "steps": 4,
-      "cfg": 1,
-      "sampler_name": "dpmpp_sde",
-      "scheduler": "karras",
-      "denoise": 0.35000000000000003,
-      "feather": 5,
-      "noise_mask": true,
-      "force_inpaint": true,
-      "bbox_threshold": 0.5,
-      "bbox_dilation": 10,
-      "bbox_crop_factor": 3,
-      "sam_detection_hint": "center-1",
-      "sam_dilation": 0,
-      "sam_threshold": 0.93,
-      "sam_bbox_expansion": 0,
-      "sam_mask_hint_threshold": 0.7,
-      "sam_mask_hint_use_negative": "False",
-      "drop_size": 10,
-      "wildcard": [
-        "145",
-        0
-      ],
-      "cycle": 1,
-      "inpaint_model": false,
-      "noise_mask_feather": 20,
-      "image": [
-        "107",
-        0
-      ],
-      "model": [
-        "8",
-        0
-      ],
-      "clip": [
-        "8",
-        1
-      ],
-      "vae": [
-        "8",
-        2
-      ],
-      "positive": [
-        "114",
-        0
-      ],
-      "negative": [
-        "113",
-        0
-      ],
-      "bbox_detector": [
-        "99",
-        0
-      ]
-    },
-    "class_type": "FaceDetailer",
-    "_meta": {
-      "title": "FaceDetailer"
-    }
-  },
-  "116": {
-    "inputs": {
-      "ckpt_name": "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae.safetensors"
-    },
-    "class_type": "CheckpointLoaderSimple",
-    "_meta": {
-      "title": "Load Checkpoint"
-    }
-  },
-  "117": {
-    "inputs": {
-      "text": [
-        "130",
-        0
-      ],
-      "clip": [
-        "116",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "118": {
-    "inputs": {
-      "text": [
-        "131",
-        0
-      ],
-      "clip": [
-        "116",
-        1
-      ]
-    },
-    "class_type": "CLIPTextEncode",
-    "_meta": {
-      "title": "CLIP Text Encode (Prompt)"
-    }
-  },
-  "119": {
-    "inputs": {
-      "seed": [
-        "140",
-        3
-      ],
-      "steps": 4,
-      "cfg": 2,
-      "sampler_name": "dpmpp_sde",
-      "scheduler": "karras",
-      "denoise": 1,
-      "model": [
-        "116",
-        0
-      ],
-      "positive": [
-        "117",
-        0
-      ],
-      "negative": [
-        "118",
-        0
-      ],
-      "latent_image": [
-        "129",
-        0
-      ]
-    },
-    "class_type": "KSampler",
-    "_meta": {
-      "title": "KSampler"
-    }
-  },
-  "120": {
-    "inputs": {
-      "samples": [
-        "119",
-        0
-      ],
-      "vae": [
-        "116",
-        2
-      ]
-    },
-    "class_type": "VAEDecode",
-    "_meta": {
-      "title": "VAE Decode"
-    }
-  },
-  "121": {
-    "inputs": {
-      "images": [
-        "120",
-        0
-      ]
-    },
-    "class_type": "PreviewImage",
-    "_meta": {
-      "title": "Preview Image"
-    }
-  },
   "122": {
     "inputs": {
       "faceanalysis": [
@@ -722,7 +376,7 @@
         0
       ],
       "image": [
-        "120",
+        "164",
         0
       ]
     },
@@ -755,13 +409,13 @@
   "125": {
     "inputs": {
       "detect_hand": "disable",
-      "detect_body": "enable",
+      "detect_body": "disable",
       "detect_face": "enable",
       "resolution": 512,
       "bbox_detector": "yolox_l.onnx",
       "pose_estimator": "dw-ll_ucoco_384_bs5.torchscript.pt",
       "image": [
-        "120",
+        "164",
         0
       ]
     },
@@ -782,46 +436,9 @@
       "title": "Preview Image"
     }
   },
-  "127": {
-    "inputs": {
-      "control_net_name": "thibaud_xl_openpose.safetensors"
-    },
-    "class_type": "ControlNetLoader",
-    "_meta": {
-      "title": "Load ControlNet Model"
-    }
-  },
-  "128": {
-    "inputs": {
-      "strength": 0.9,
-      "control_net": [
-        "127",
-        0
-      ],
-      "image": [
-        "125",
-        0
-      ]
-    },
-    "class_type": "ControlNetApply",
-    "_meta": {
-      "title": "Apply ControlNet"
-    }
-  },
-  "129": {
-    "inputs": {
-      "width": 512,
-      "height": 512,
-      "batch_size": 1
-    },
-    "class_type": "EmptyLatentImage",
-    "_meta": {
-      "title": "Empty Latent Image"
-    }
-  },
   "130": {
     "inputs": {
-      "prompt": "RAW photo, a casual photo of a girl, age 24, green eyes, white shoulder length hair, 8k uhd, high quality, film grain, Fujifilm XT3, full body, facial expression, laying on a beach, full body"
+      "prompt": "RAW portrait photo, man age 28 hiking on a trail"
     },
     "class_type": "CR Prompt Text",
     "_meta": {
@@ -839,7 +456,7 @@
   },
   "140": {
     "inputs": {
-      "seed": 415435
+      "seed": 1348329489
     },
     "class_type": "Seed",
     "_meta": {
@@ -877,11 +494,11 @@
   "144": {
     "inputs": {
       "upscale_method": "nearest-exact",
-      "width": 1032,
+      "width": 1024,
       "height": 1024,
       "crop": "disabled",
       "samples": [
-        "119",
+        "163",
         0
       ]
     },
@@ -892,11 +509,205 @@
   },
   "145": {
     "inputs": {
-      "prompt": "green eyes"
+      "prompt": "brown eyes"
     },
     "class_type": "CR Prompt Text",
     "_meta": {
       "title": "Eye Enhancer prompt"
+    }
+  },
+  "154": {
+    "inputs": {
+      "image": "jordan-headshot.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "163": {
+    "inputs": {
+      "seed": [
+        "140",
+        3
+      ],
+      "steps": 4,
+      "cfg": 1.5,
+      "sampler_name": "dpmpp_sde_gpu",
+      "scheduler": "karras",
+      "denoise": 0.9500000000000001,
+      "model": [
+        "8",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "10",
+        0
+      ],
+      "latent_image": [
+        "166",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "164": {
+    "inputs": {
+      "samples": [
+        "163",
+        0
+      ],
+      "vae": [
+        "8",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "165": {
+    "inputs": {
+      "images": [
+        "164",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "166": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "173": {
+    "inputs": {},
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "176": {
+    "inputs": {},
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "209": {
+    "inputs": {
+      "images": [
+        "98",
+        2
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "215": {
+    "inputs": {
+      "model_name": "sam_vit_b_01ec64.pth",
+      "device_mode": "Prefer GPU"
+    },
+    "class_type": "SAMLoader",
+    "_meta": {
+      "title": "SAMLoader (Impact)"
+    }
+  },
+  "217": {
+    "inputs": {
+      "image": "koreanheadshot4.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "218": {
+    "inputs": {
+      "tonemap_multiplier": 7,
+      "rescale_multiplier": 0.62,
+      "model": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "TonemapNoiseWithRescaleCFG",
+    "_meta": {
+      "title": "TonemapNoiseWithRescaleCFG"
+    }
+  },
+  "220": {
+    "inputs": {
+      "image": "dim-asian-headshot.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "221": {
+    "inputs": {
+      "preset": "FACEID PLUS V2",
+      "lora_strength": 0.6,
+      "provider": "CPU",
+      "model": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoaderFaceID",
+    "_meta": {
+      "title": "IPAdapter Unified Loader FaceID"
+    }
+  },
+  "222": {
+    "inputs": {
+      "weight": 0.5,
+      "weight_faceidv2": 1,
+      "weight_type": "linear",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "221",
+        0
+      ],
+      "ipadapter": [
+        "221",
+        1
+      ],
+      "image": [
+        "154",
+        0
+      ]
+    },
+    "class_type": "IPAdapterFaceID",
+    "_meta": {
+      "title": "IPAdapter FaceID"
     }
   }
 }
